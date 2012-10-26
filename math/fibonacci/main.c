@@ -1,4 +1,4 @@
-/* This program calculates the square root by the babylonian method.
+/* This program calculates the fibonacci numbers.
    Copyright (C) 2012 Roman Gerhardt <rootman@onders.org>,
    Fabian Nedoluha <finga@onders.org>
 
