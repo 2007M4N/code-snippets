@@ -1,4 +1,4 @@
-/* This program calculates the square root by the babylonian method.
+/* This program calculates the fibonacci numbers.
    Copyright (C) 2012 Roman Gerhardt <rootman@onders.org>,
    Fabian Nedoluha <finga@onders.org>
 
@@ -21,14 +21,14 @@
 
 void f_fibonacci(int v_i)
 {
-	int v_fibonacci[v_i-1];
+	long long int v_fibonacci[v_i];
 	int i;
 	v_fibonacci[0]=0;
 	v_fibonacci[1]=1;
 	for (i=-1;i<v_i;i++)
 	{
 		v_fibonacci[i+3]=v_fibonacci[i+2]+v_fibonacci[i+1];
-		printf("Durchlauf:\t%i\tfibonacci Zahl:\t%i\n",i+1,v_fibonacci[i+1]);
+		printf("Durchlauf:\t%i\tfibonacci Zahl:\t%lli\n",i+1,v_fibonacci[i+1]);
 	}
 }
 

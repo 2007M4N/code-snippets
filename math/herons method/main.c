@@ -16,8 +16,9 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 
-long double wurzelvonbabel_quadrat(int radikant)
+long double wurzelvonbabel_quadrat(long double radikant)
 {
   long double a[255], wurzel;
   int i;
@@ -38,7 +39,7 @@ long double wurzelvonbabel_quadrat(int radikant)
 
 void usage(char *program_name)
 {
-  printf("Usage: %s <radikant in integer>\n", program_name);
+  printf("Usage: %s <radikant>\n", program_name);
   exit(1);
 }
 
@@ -46,9 +47,9 @@ int main(int argc, char *argv[])
 {
   if(argc == 2)
   {
-    int radikant = atoi(argv[1]);
+    long double radikant = strtold(argv[1],0);
 
-    printf("Radikant: %i\n", radikant);
+    printf("Radikant: %.64Lf\n", radikant);
     printf("Ergebnis: %.64Lf\n", wurzelvonbabel_quadrat(radikant));
   }else{
     usage(argv[0]);
