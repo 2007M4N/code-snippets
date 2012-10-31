@@ -19,7 +19,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void f_fibonacci(int v_i)
+int f_fibonacci(int v_i)
 {
 	long long int v_fibonacci[v_i];
 	int i;
@@ -30,6 +30,7 @@ void f_fibonacci(int v_i)
 		v_fibonacci[i+3]=v_fibonacci[i+2]+v_fibonacci[i+1];
 		printf("Durchlauf:\t%i\tfibonacci Zahl:\t%lli\n",i+1,v_fibonacci[i+1]);
 	}
+	return(0)
 }
 
 void usage(char *program_name)
@@ -37,7 +38,7 @@ void usage(char *program_name)
   printf("Usage: %s <Genauigkeit>\n", program_name);
     exit(1);
     }
-int main(int argc, char *argv[])
+void main(int argc, char *argv[])
 {
   if(argc == 2)
   {
