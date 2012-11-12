@@ -19,35 +19,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int f_fibonacci(int v_i)
+void f_fibonacci(int v_i)
 {
-	long long int v_fibonacci[v_i];
-	int i;
-	v_fibonacci[0]=0;
-	v_fibonacci[1]=1;
-	for (i=-1;i<v_i;i++)
-	{
-		v_fibonacci[i+3]=v_fibonacci[i+2]+v_fibonacci[i+1];
-		printf("Durchlauf:\t%i\tfibonacci Zahl:\t%lli\n",i+1,v_fibonacci[i+1]);
-	}
-	return(0)
+  long long int v_fibonacci[v_i];
+  int i;
+  v_fibonacci[0]=0;
+  v_fibonacci[1]=1;
+  for (i=-1;i<v_i;i++)
+    {
+      v_fibonacci[i+3]=v_fibonacci[i+2]+v_fibonacci[i+1];
+      printf("Durchlauf:\t%i\tfibonacci Zahl:\t%lli\n",i+1,v_fibonacci[i+1]);
+    }
 }
 
 void usage(char *program_name)
 {
   printf("Usage: %s <Genauigkeit>\n", program_name);
-    exit(1);
-    }
+  exit(1);
+}
 void main(int argc, char *argv[])
 {
   if(argc == 2)
   {
-  	int fibonacci = atoi(argv[1]);
-	f_fibonacci(fibonacci);
+    int fibonacci = atoi(argv[1]);
+    f_fibonacci(fibonacci);
   }
   else
   {
-  	usage(argv[0]);
+    usage(argv[0]);
   }
   
 }
