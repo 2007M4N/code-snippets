@@ -32,24 +32,23 @@ except NameError: pass
 url = input('URL: http://')
 itime = input('Interval Time [sec]: ')
 count = input('Loop Count: ')
+filename = input('Save to[' + str(url) + '.txt]: ')
 
-file = open(str(url) + '.txt', 'w')
+if filename == '':
+    filename = url + '.txt'
 
-print('Round: 1')
-resp, content = httplib2.Http().request('http://' + str(url))
-with open(str(url) + '.txt', 'a', opener=opener) as f:
-    print(resp, file=f)
-    print(content, file=f)
-os.close
+file = open(str(filename), 'w')
 
 for i in range(int(count)):
-    time.sleep(float(itime))
-    print('Round: ' + str(i + 2))
+
+    print('Round: ' + str(i + 1))
     resp, content = httplib2.Http().request('http://' + str(url))
-    with open(str(url) + '.txt', 'a', opener=opener) as f:
+    with open(str(filename), 'a', opener=opener) as f:
         print(resp, file=f)
         print(content, file=f)
     os.close
+    if i != (int(count) - 1):
+        time.sleep(float(itime))
 
 print('done...')
 exit()
